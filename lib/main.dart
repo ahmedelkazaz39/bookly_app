@@ -1,4 +1,4 @@
-import 'package:bookly_app/spalsh_view.dart';
+import 'package:bookly_app/features/presentation/views/spalsh_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
