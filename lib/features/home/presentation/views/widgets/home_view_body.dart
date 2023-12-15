@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/splash/presentation/views/widgets/custom_appbar.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
