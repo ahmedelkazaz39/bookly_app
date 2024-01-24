@@ -13,7 +13,7 @@ class FeaturedListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.only(right: 12),
-            child: CustomListViewItem(),
+            child: CustomBookImage(),
           );
         },
       ),
