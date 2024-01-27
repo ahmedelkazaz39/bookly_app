@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_appbar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
@@ -19,7 +20,7 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 30,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .22),
+            padding: EdgeInsets.symmetric(horizontal: width * .25),
             child: const CustomBookImage(),
           ),
           const SizedBox(
@@ -42,11 +43,49 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-         const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-         ),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          const SizedBox(
+            height: 37,
+          ),
+          const BookActions(),
         ],
       ),
+    );
+  }
+}
+
+class BookActions extends StatelessWidget {
+  const BookActions({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        Expanded(
+          child: CustomButton(
+            text: '19.99€',
+            backgroundColor: Color(0xffFFFFFF),
+            textColor: Color(0xff000000),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(16),
+              bottomLeft: Radius.circular(16),
+            ),
+          ),
+        ),
+        Expanded(
+          child: CustomButton(
+            text: 'Free preview',
+            backgroundColor: Color(0xffEF8262),
+            textColor: Color(0xffFFFFFF),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(16),
+              bottomRight: Radius.circular(16),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
