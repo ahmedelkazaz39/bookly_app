@@ -11,69 +11,26 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding:   EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
-                const CustomBookDetailsAppBar(),
-                const SizedBox(
+                  CustomBookDetailsAppBar(),
+                  SizedBox(
                   height: 30,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * .25),
-                  child: const CustomBookImage(),
-                ),
-                const SizedBox(
-                  height: 45,
-                ),
-                const Text(
-                  'The Jungle Book',
-                  style: Styles.textStyle30,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                const Opacity(
-                  opacity: .7,
-                  child: Text(
-                    'Rudyard Kipling',
-                    style: Styles.textStyle18,
-                  ),
-                ),
-                const SizedBox(
-                  height: 14,
-                ),
-                const BookRating(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
-                const SizedBox(
-                  height: 37,
-                ),
-                const BookActions(),
-                const Expanded(
+                  BookDetailsSection(),
+                  Expanded(
                   child: SizedBox(
                     height: 49,
                   ),
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'You can also like',
-                    style: Styles.textStyle14.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const SimilarBooksListView(),
-                const SizedBox(
+                SimilarBooksSection(),
+                  SizedBox(
                   height: 40,
                 ),
               ],
@@ -82,5 +39,71 @@ class BookDetailsViewBody extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class BookDetailsSection extends StatelessWidget {
+  const BookDetailsSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * .25),
+          child: const CustomBookImage(),
+        ),
+        const SizedBox(
+          height: 45,
+        ),
+        const Text(
+          'The Jungle Book',
+          style: Styles.textStyle30,
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        const Opacity(
+          opacity: .7,
+          child: Text(
+            'Rudyard Kipling',
+            style: Styles.textStyle18,
+          ),
+        ),
+        const SizedBox(
+          height: 14,
+        ),
+        const BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
+        const SizedBox(
+          height: 37,
+        ),
+        const BookActions(),
+      ],
+    );
+  }
+}
+
+class SimilarBooksSection extends StatelessWidget {
+  const SimilarBooksSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Text(
+        'You can also like',
+        style: Styles.textStyle14.copyWith(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      const SizedBox(
+        height: 16,
+      ),
+      const SimilarBooksListView(),
+    ]);
   }
 }
