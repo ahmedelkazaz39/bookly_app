@@ -5,15 +5,14 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
- 
+
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()
-      {
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kBookDetailsView);
       },
       child: SizedBox(
@@ -25,7 +24,7 @@ class BestSellerListViewItem extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-               //   color: Colors.red,
+                  //   color: Colors.red,
                   image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(
@@ -46,8 +45,8 @@ class BestSellerListViewItem extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
                       'Harry Potter and the Goblet of Fire',
-                      style:
-                          Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
+                      style: Styles.textStyle20
+                          .copyWith(fontFamily: kGTSectraFine),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -86,4 +85,3 @@ class BestSellerListViewItem extends StatelessWidget {
     );
   }
 }
-
