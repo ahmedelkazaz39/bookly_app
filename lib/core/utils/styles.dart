@@ -11,7 +11,7 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
     //fontFamily: kGTSectraFine,
   );
-   static const textStyle14 = TextStyle(
+  static const textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
@@ -24,5 +24,4 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
     fontFamily: kGTSectraFine,
   );
-
 }
